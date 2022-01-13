@@ -7,9 +7,9 @@ import '../scss/main.scss';
 /* place your code below */
 
 
-let minutes = document.querySelector(".minutes");
-let seconds = document.querySelector(".seconds");
-let miliseconds = document.querySelector(".miliseconds");
+const minutes = document.querySelector(".minutes");
+const seconds = document.querySelector(".seconds");
+const miliseconds = document.querySelector(".miliseconds");
 const btnStart = document.querySelector(".start");
 const btnPause = document.querySelector(".pause");
 const btnReset = document.querySelector(".reset");
@@ -20,7 +20,6 @@ let minutesCounter = 0;
 let runTimer;
 
 
-
 const startCounting = () => {
 
 minionsStatic.classList.add("hidden");
@@ -28,37 +27,25 @@ btnStart.classList.add("hidden");
 btnPause.classList.remove("hidden");
 
 const increaseSeconds = ()=> {
-    miliseconds.textContent = "0"+milisecondsCounter;
-    ++milisecondsCounter;
-    if (milisecondsCounter<10){
-        miliseconds.textContent = "0"+milisecondsCounter;    
-    }
-    else {
-        miliseconds.textContent = milisecondsCounter;
+
+    milisecondsCounter++;
+
+    if (milisecondsCounter === 100) {
+        milisecondsCounter = 0;
+        secondsCounter++;
     }
 
-    if (milisecondsCounter===99) {
-        milisecondsCounter=0;
-        secondsCounter+=1;
-        if (secondsCounter<10){
-            seconds.textContent = "0"+secondsCounter;    
-        }
-        else {
-            seconds.textContent = secondsCounter;
-        }
-    }
-    
-    if (secondsCounter===59) {
-        secondsCounter=0;
-        ++minutesCounter;
-        if (minutesCounter<10){
-            minutes.textContent = "0"+minutesCounter;    
-        }
-        else {
-            minutes.textContent=minutesCounter;
-        }
+    milisecondsCounter<10 ? miliseconds.textContent = "0"+milisecondsCounter : miliseconds.textContent = milisecondsCounter;
+  
+  secondsCounter<10 ? seconds.textContent = "0"+secondsCounter : seconds.textContent = secondsCounter;
         
+    if (secondsCounter===60) {
+        secondsCounter=0;
+        minutesCounter++;
     }
+
+minutesCounter<10 ? minutes.textContent = "0"+minutesCounter : minutes.textContent=minutesCounter;
+
 }
 runTimer = setInterval(increaseSeconds,10);
 }
