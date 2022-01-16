@@ -7,13 +7,13 @@ import '../scss/main.scss';
 /* place your code below */
 
 
-const minutes = document.querySelector(".minutes");
-const seconds = document.querySelector(".seconds");
-const miliseconds = document.querySelector(".miliseconds");
-const btnStart = document.querySelector(".start");
-const btnPause = document.querySelector(".pause");
-const btnReset = document.querySelector(".reset");
-const minionsStatic = document.querySelector(".minions-static");
+const minutes = document.querySelector(".stopwatch-timer__minutes--js");
+const seconds = document.querySelector(".stopwatch-timer__seconds--js");
+const miliseconds = document.querySelector(".stopwatch-timer__miliseconds--js");
+const btnStart = document.querySelector(".stopwatch-buttons__button-start--js");
+const btnPause = document.querySelector(".stopwatch-buttons__button-pause--js");
+const btnReset = document.querySelector(".stopwatch-buttons__button-reset--js");
+const imageStatic = document.querySelector(".stopwatch__image--static");
 let milisecondsCounter = 0;
 let secondsCounter = 0;
 let minutesCounter = 0;
@@ -22,9 +22,9 @@ let runTimer;
 
 const startCounting = () => {
 
-minionsStatic.classList.add("hidden");
-btnStart.classList.add("hidden");
-btnPause.classList.remove("hidden");
+imageStatic.classList.add("hidden--js");
+btnStart.classList.add("hidden--js");
+btnPause.classList.remove("hidden--js");
 
 const increaseSeconds = ()=> {
 
@@ -53,9 +53,9 @@ runTimer = setInterval(increaseSeconds,10);
 btnStart.addEventListener('click', startCounting);
 
 const pauseCounting = () => {
-    minionsStatic.classList.remove("hidden");
-    btnStart.classList.remove("hidden");
-    btnPause.classList.add("hidden");
+    imageStatic.classList.remove("hidden--js");
+    btnStart.classList.remove("hidden--js");
+    btnPause.classList.add("hidden--js");
     clearInterval(runTimer);
 }
 
