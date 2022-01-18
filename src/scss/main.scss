@@ -1,7 +1,18 @@
 @import "~normalize.css";
 
-@import "_variables";
-@import "modules/hello.scss";
+$lightgreen: #bcce46ff;
+$darkgreen: #737e3dff;
+$mobile: 768px;
+
+@mixin image-size {
+width: 400px;
+height: 200px; 
+}
+
+@mixin image-size-mobile {
+width: 300px;
+height: 150px;
+}
 
 body {
   width: 100%;
@@ -9,10 +20,11 @@ body {
   margin:0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 div {
-  margin: 20px;
+  margin: 18px;
 }
 
 .stopwatch {
@@ -20,37 +32,41 @@ div {
   height:100%;
   margin:0px;
   padding: 0px;
-  border-top: 7px solid #737e3dff;
-  color: black;
-  font-family: 'Ubuntu', sans-serif;  
+  border-top: 7px solid $darkgreen;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   position: relative;
+
+  &__title {
+  font-size: 60px;  
+    &--highlited {
+      color: $lightgreen;    
+    }
+  @media(max-width: $mobile) {
+    font-size: 35px;
+  }
 }
 
-.stopwatch__title {
-  font-size: 60px;
-}
+&__image {
+  @include image-size;
+  position: relative;    
 
-.stopwatch__title--highlited {
-  color: #bcce46ff;
-}
-
-.stopwatch__image {
-  width: 400px;
-  height: 200px;
-  position: relative;
-}
-
-.stopwatch__image--static {
+&--static {
+  @include image-size;
   background-color: white;
-  width: 400px;
-  height: 200px;
   position: absolute;
   top: 0;
   left:0;
+  @media(max-width: $mobile) {
+    @include image-size-mobile;
+  }
+}
+@media(max-width: $mobile) {
+  @include image-size-mobile;
+}
+}
 }
 
 .hidden--js {
@@ -64,16 +80,23 @@ div {
   justify-content: space-around;
   font-size: 25px;
    
-}
+  &__button {
+    background-color: $lightgreen;
+    padding: 10px 40px 10px 40px;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;    
+  }
 
-.stopwatch-buttons__button {
-  background-color: #bcce46ff;
-  padding: 10px 40px 10px 40px;
-  border: 1px solid rgba(27, 31, 35, .15);
-  border-radius: 6px;
-  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  @media(max-width: $mobile) {
+    width: 250px;
+    font-size: 14px;
+  }
 }
 
 .stopwatch-timer {
   font-size: 75px;
+@media(max-width: $mobile) {
+  font-size: 50px;
+}
 }
