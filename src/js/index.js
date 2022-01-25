@@ -7,17 +7,20 @@ import '../scss/main.scss';
 /* place your code below */
 
 
-const minutes = document.querySelector(".stopwatch-timer__minutes--js");
-const seconds = document.querySelector(".stopwatch-timer__seconds--js");
-const miliseconds = document.querySelector(".stopwatch-timer__miliseconds--js");
-const btnStart = document.querySelector(".stopwatch-buttons__button-start--js");
-const btnPause = document.querySelector(".stopwatch-buttons__button-pause--js");
-const btnReset = document.querySelector(".stopwatch-buttons__button-reset--js");
-const imageStatic = document.querySelector(".stopwatch__image--static");
+const minutes = document.querySelector(".timer__minutes--js");
+const seconds = document.querySelector(".timer__seconds--js");
+const miliseconds = document.querySelector(".timer__miliseconds--js");
+const btnStart = document.querySelector(".buttons__start--js");
+const btnPause = document.querySelector(".buttons__pause--js");
+const btnReset = document.querySelector(".buttons__reset--js");
+const imageStatic = document.querySelector(".image__static--js");
+const speechBubble = document.querySelector(".image-speech-bubble--js");
+let speechText = document.querySelector(".image-speech-bubble__text--js");
 let milisecondsCounter = 0;
 let secondsCounter = 0;
 let minutesCounter = 0;
 let runTimer;
+let runBubble;
 
 
 const startCounting = () => {
@@ -47,7 +50,18 @@ const increaseSeconds = ()=> {
 minutesCounter<10 ? minutes.textContent = "0"+minutesCounter : minutes.textContent=minutesCounter;
 
 }
+
+const turtleTalking = () => {
+const speeches = ["Jesteś zwycięzcą!", "Oddychaj!", "Dajesz!", "Raz, raz, raz!", "Brawo, tak jest!", "Jeszcze trochę!", "Mistrz, Mistrz!", "Run, Forrest, run!", "Szybciej!", "Hop hop hop!", "Szybciej, szybciej!", "Wdech, wydech...", "Nie ma, że boli...", "Dasz radę!", "Wytrzymaj!", "Nie obijamy się!", "Ciśniesz!", "Przyspieszamy!", "Kto rządzi?"];
+let randomNumber = Math.floor(Math.random()*(speeches.length));
+console.log(randomNumber);
+console.log(speeches[randomNumber]); 
+speechText.textContent = speeches[randomNumber];
+speechBubble.classList.toggle("hidden--js");
+}
+
 runTimer = setInterval(increaseSeconds,10);
+runBubble = setInterval(turtleTalking,2000);
 }
 
 btnStart.addEventListener('click', startCounting);
@@ -57,6 +71,8 @@ const pauseCounting = () => {
     btnStart.classList.remove("hidden--js");
     btnPause.classList.add("hidden--js");
     clearInterval(runTimer);
+    clearInterval(runBubble);
+    speechBubble.classList.add("hidden--js")
 }
 
 btnPause.addEventListener('click', pauseCounting);

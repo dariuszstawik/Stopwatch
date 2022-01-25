@@ -150,24 +150,53 @@
 
   <body>
 
-    <main class = "stopwatch">
-    <h1 class = "stopwatch__title"><span class = "stopwatch__title--highlited">Turtle </span>trainer</h1>
-    <div class = "stopwatch__image">
-      <div class="tenor-gif-embed" data-postid="19375376" data-share-method="host" data-aspect-ratio="1" data-width="50%"><a href="https://tenor.com/view/turtlecoin-elephant-turtle-stomp-running-gif-19375376">Turtlecoin Elephant Sticker</a>from <a href="https://tenor.com/search/turtlecoin-stickers">Turtlecoin Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <main class = "main">
+    <header class="header">
+    <h1 class = "header__title"><span class = "header__title--highlited">Turtle </span>trainer</h1>
+    <p class="header__subtitle">your personal stopwatch</p>
+    </header>
 
-    <div class = "stopwatch__image--static">
-      <img src = "../assets/img/turtle-static.png" width="50%" >
+    <div class = "image">
+      <div class="tenor-gif-embed" data-postid="19375376" data-share-method="host" data-aspect-ratio="1" data-width="50%"><a href="https://tenor.com/view/turtlecoin-elephant-turtle-stomp-running-gif-19375376">Turtlecoin Elephant Sticker</a>from <a href="https://tenor.com/search/turtlecoin-stickers">Turtlecoin Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <div class="image-speech-bubble image-speech-bubble--js hidden--js">
+      <span class="image-speech-bubble__text image-speech-bubble__text--js">Jesteś zwycięzcą!</span>
+    </div>
+    <div class = "image__static image__static--js">
+      <img class = "image__static-img" src = "../assets/img/turtle-static.png">
     </div>
   </div>
 
-<div class = "stopwatch-timer">
-  <span class = "stopwatch-timer__minutes stopwatch-timer__minutes--js">00</span> : <span class = "stopwatch-timer__seconds stopwatch-timer__seconds--js">00</span> : <span class = "stopwatch-timer__miliseconds stopwatch-timer__miliseconds--js">00</span>
+<div class = "timer">
+  <span class = "timer__numbers timer__minutes--js">00</span> : <span class = "timer__numbers timer__seconds--js">00</span> : <span class = "timer__numbers timer__miliseconds--js">00</span>
 </div>
-<div class = "stopwatch-buttons">
-<button class = "stopwatch-buttons__button stopwatch-buttons__button-start--js">Start</button>
-<button class = "stopwatch-buttons__button stopwatch-buttons__button-pause--js hidden--js">Pause</button>
-<button class = "stopwatch-buttons__button stopwatch-buttons__button-reset--js">Reset</button>
+<div class = "buttons">
+<button class = "buttons__button buttons__start--js">Start</button>
+<button class = "buttons__button buttons__pause--js hidden--js">Pause</button>
+<button class = "buttons__button buttons__reset--js">Reset</button>
 </div>
 </main>
   </body>
 </html>
+
+<!-- 
+
+header class = "header"
+h1 class = header__title
+p class = header__subtitle
+
+div class = "image"
+image__animated image__animated--js
+image__static image__static--js
+image-speech-bubble image-speech-bubble--js
+image-speech-bubble__text image-speech-bubble__text--js
+
+div class = "timer"
+timer__numbers timer__miliseconds--js
+timer__numbers timer__seconds--js
+timer__numbers timer__minutes--js
+
+div class = "buttons"
+buttons__button buttons__start--js
+buttons__button buttons__pause--js
+buttons__button buttons__reset--js
+-->
