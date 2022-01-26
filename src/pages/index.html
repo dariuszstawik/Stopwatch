@@ -1,108 +1,82 @@
 <!DOCTYPE html>
 <html lang="pl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turtle trainer</title>
+    <meta name="description" content="Your personal stopwatch">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Turtle trainer</title>
-  <meta name="description" content="Your personal stopwatch" />
-  <!-- Title -->
-  <meta property="og:title" content="Turtle trainer" />
-  <!-- OPTIONAL description. 2-4 sentences. -->
-  <meta property="og:description" content="Simple stopwatch application with embeded turtle gif" />
-  <!-- full url with http(s) ie. https://maciejkorsan.github.io/my-repo/ -->
-  <meta property="og:url" content="https://dariuszstawik.github.io/Stopwatch/" />
-  <!-- full url to the image with http(s) ie. https://maciejkorsan.github.io/my-repo/assets/img/fb.png. Facebook suggests at least 1200 x 630. -->
-  <meta property="og:image" content="https://dariuszstawik.github.io/Stopwatch/assets/img/stopwatch-cover" />
+    <!-- Title -->
+    <meta property="og:title" content="Turtle trainer">
 
-  <!-- uncomment the line below to enable PWA  -->
-  <link rel="manifest" href="manifest.json" />
+    <!-- OPTIONAL description. 2-4 sentences. -->
+    <meta property="og:description" content="Simple stopwatch application with embeded turtle gif">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="pwa/apple-icon-180.png" />
-  <link rel="apple-touch-icon" sizes="167x167" href="pwa/apple-icon-167.png" />
-  <link rel="apple-touch-icon" sizes="152x152" href="pwa/apple-icon-152.png" />
-  <link rel="apple-touch-icon" sizes="120x120" href="pwa/apple-icon-120.png" />
+    <!-- full url with http(s) ie. https://maciejkorsan.github.io/my-repo/ -->
+    <meta property="og:url" content="https://dariuszstawik.github.io/Stopwatch/">
 
-  <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- full url to the image with http(s) ie. https://maciejkorsan.github.io/my-repo/assets/img/fb.png. Facebook suggests at least 1200 x 630. -->
+    <meta property="og:image" content="https://dariuszstawik.github.io/Stopwatch/assets/img/stopwatch-cover">
 
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-2048-2732.png"
-    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-2732-2048.png"
-    media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-1668-2388.png"
-    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-2388-1668.png"
-    media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-1668-2224.png"
-    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-2224-1668.png"
-    media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-1536-2048.png"
-    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-2048-1536.png"
-    media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-1242-2688.png"
-    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-2688-1242.png"
-    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-1125-2436.png"
-    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-2436-1125.png"
-    media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-828-1792.png"
-    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-1792-828.png"
-    media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-1242-2208.png"
-    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-2208-1242.png"
-    media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-750-1334.png"
-    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-1334-750.png"
-    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-640-1136.png"
-    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" />
-  <link rel="apple-touch-startup-image" href="pwa/apple-splash-1136-640.png"
-    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
-  </style>
-</head>
-
-<body>
-
-  <main class="main">
-    <header class="header">
-      <h1 class="header__title"><span class="header__title--highlited">Turtle </span>trainer</h1>
-      <p class="header__subtitle">your personal stopwatch</p>
-    </header>
-
-    <div class="image">
-      <div class="tenor-gif-embed" data-postid="19375376" data-share-method="host" data-aspect-ratio="1"
-        data-width="50%"><a
-          href="https://tenor.com/view/turtlecoin-elephant-turtle-stomp-running-gif-19375376">Turtlecoin Elephant
-          Sticker</a>from <a href="https://tenor.com/search/turtlecoin-stickers">Turtlecoin Stickers</a></div>
-      <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
-      <div class="image-speech-bubble image-speech-bubble--js hidden--js">
-        <span class="image-speech-bubble__text image-speech-bubble__text--js">Jesteś zwycięzcą!</span>
+    <!-- uncomment the line below to enable PWA  -->
+    <link rel="manifest" href="manifest.json">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+    </style>
+    <link rel="apple-touch-icon" href="pwa/apple-icon-180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-2048-2732.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-2732-2048.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-1668-2388.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-2388-1668.png" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-1536-2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-2048-1536.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-1668-2224.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-2224-1668.png" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-1620-2160.png" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-2160-1620.png" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-1284-2778.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-2778-1284.png" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-1170-2532.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-2532-1170.png" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-1125-2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-2436-1125.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-1242-2688.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-2688-1242.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-828-1792.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-1792-828.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-1242-2208.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-2208-1242.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-750-1334.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-1334-750.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-640-1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="pwa/apple-splash-1136-640.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
+  </head>
+  <body>
+    <main class="main">
+      <header class="header">
+        <h1 class="header__title"><span class="header__title--highlited">Turtle </span>trainer</h1>
+        <p class="header__subtitle">your personal stopwatch</p>
+      </header>
+      <div class="image">
+        <div class="tenor-gif-embed" data-postid="19375376" data-share-method="host" data-aspect-ratio="1" data-width="50%"><a href="https://tenor.com/view/turtlecoin-elephant-turtle-stomp-running-gif-19375376">Turtlecoin Elephant
+            Sticker</a>from <a href="https://tenor.com/search/turtlecoin-stickers">Turtlecoin Stickers</a></div>
+        <script type="text/javascript" async="" src="https://tenor.com/embed.js"></script>
+        <div class="image-speech-bubble image-speech-bubble--js hidden--js">
+          <span class="image-speech-bubble__text image-speech-bubble__text--js">Jesteś zwycięzcą!</span>
+        </div>
+        <div class="image__static image__static--js">
+          <img class="image__static-img" src="../assets/img/turtle-static.png">
+        </div>
       </div>
-      <div class="image__static image__static--js">
-        <img class="image__static-img" src="../assets/img/turtle-static.png">
+      <div class="timer">
+        <span class="timer__numbers timer__minutes--js">00</span> : <span class="timer__numbers timer__seconds--js">00</span> : <span class="timer__numbers timer__miliseconds--js">00</span>
       </div>
-    </div>
-
-    <div class="timer">
-      <span class="timer__numbers timer__minutes--js">00</span> : <span
-        class="timer__numbers timer__seconds--js">00</span> : <span
-        class="timer__numbers timer__miliseconds--js">00</span>
-    </div>
-    <div class="buttons">
-      <button class="buttons__button buttons__start--js">Start</button>
-      <button class="buttons__button buttons__pause--js hidden--js">Pause</button>
-      <button class="buttons__button buttons__reset--js">Reset</button>
-    </div>
-  </main>
-</body>
-
+      <div class="buttons">
+        <button class="buttons__button buttons__start--js">Start</button>
+        <button class="buttons__button buttons__pause--js hidden--js">Pause</button>
+        <button class="buttons__button buttons__reset--js">Reset</button>
+      </div>
+    </main>
+  </body>
 </html>

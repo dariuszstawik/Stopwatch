@@ -1,6 +1,6 @@
 {
-  "name": "Turtle trainer",
-  "version": "1.0",
+  "name": "Turtle-trainer",
+  "version": "1.0.1",
   "description": "Simple stopwatch application with embeded turtle gif",
   "main": "index.js",
   "private": true,
@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --config webpack.dev.js --mode development",
     "build": "webpack --config webpack.prod.js --mode production",
     "publish": "npm run build && gh-pages -d dist",
-    "generate-icons": "npx pwa-asset-generator ./src/assets/img/turtle-static.png public/pwa -i ./src/pages/index.html -m ./public/manifest.json  --path-override pwa --type png -b \"#2D2241\""
+    "generate-icons": "npx pwa-asset-generator ./src/assets/img/turtle-static.png public/pwa -i ./src/pages/index.html -m ./public/manifest.json  --path-override pwa --type png -b \"#FFFFFF\""
   },
   "keywords": [
     "Webpack",
