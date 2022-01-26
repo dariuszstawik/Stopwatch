@@ -1,0 +1,36 @@
+{
+  "name": "Turtle trainer - your peersonal stopwatch",
+  "short_name": "Turtle trainer",
+  "theme_color": "#737e3dff",
+  "background_color": "#737e3dff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/Stopwatch/",
+  "start_url": "/Stopwatch/",
+  "icons": [
+    {
+      "src": "pwa/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa/manifest-icon-192.maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "pwa/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
