@@ -1,8 +1,8 @@
 import '../scss/main.scss';
 
 // uncomment the lines below to enable PWA
-// import {registerSW} from './pwa.js';
-// registerSW();
+import {registerSW} from './pwa.js';
+registerSW();
 
 /* place your code below */
 
@@ -25,43 +25,43 @@ let runBubble;
 
 const startCounting = () => {
 
-imageStatic.classList.add("hidden--js");
-btnStart.classList.add("hidden--js");
-btnPause.classList.remove("hidden--js");
+    imageStatic.classList.add("hidden--js");
+    btnStart.classList.add("hidden--js");
+    btnPause.classList.remove("hidden--js");
 
-const increaseSeconds = ()=> {
+    const increaseSeconds = () => {
 
-    milisecondsCounter++;
+        milisecondsCounter++;
 
-    if (milisecondsCounter === 100) {
-        milisecondsCounter = 0;
-        secondsCounter++;
+        if (milisecondsCounter === 100) {
+            milisecondsCounter = 0;
+            secondsCounter++;
+        }
+
+        milisecondsCounter < 10 ? miliseconds.textContent = "0" + milisecondsCounter : miliseconds.textContent = milisecondsCounter;
+
+        secondsCounter < 10 ? seconds.textContent = "0" + secondsCounter : seconds.textContent = secondsCounter;
+
+        if (secondsCounter === 60) {
+            secondsCounter = 0;
+            minutesCounter++;
+        }
+
+        minutesCounter < 10 ? minutes.textContent = "0" + minutesCounter : minutes.textContent = minutesCounter;
+
     }
 
-    milisecondsCounter<10 ? miliseconds.textContent = "0"+milisecondsCounter : miliseconds.textContent = milisecondsCounter;
-  
-  secondsCounter<10 ? seconds.textContent = "0"+secondsCounter : seconds.textContent = secondsCounter;
-        
-    if (secondsCounter===60) {
-        secondsCounter=0;
-        minutesCounter++;
+    const turtleTalking = () => {
+        const speeches = ["Jesteś zwycięzcą!", "Oddychaj!", "Dajesz!", "Raz, raz, raz!", "Brawo, tak jest!", "Jeszcze trochę!", "Mistrz, Mistrz!", "Run, Forrest, run!", "Szybciej!", "Hop hop hop!", "Szybciej, szybciej!", "Wdech, wydech...", "Nie ma, że boli...", "Dasz radę!", "Wytrzymaj!", "Nie obijamy się!", "Ciśniesz!", "Przyspieszamy!", "Kto rządzi?"];
+        let randomNumber = Math.floor(Math.random() * (speeches.length));
+        console.log(randomNumber);
+        console.log(speeches[randomNumber]);
+        speechText.textContent = speeches[randomNumber];
+        speechBubble.classList.toggle("hidden--js");
     }
 
-minutesCounter<10 ? minutes.textContent = "0"+minutesCounter : minutes.textContent=minutesCounter;
-
-}
-
-const turtleTalking = () => {
-const speeches = ["Jesteś zwycięzcą!", "Oddychaj!", "Dajesz!", "Raz, raz, raz!", "Brawo, tak jest!", "Jeszcze trochę!", "Mistrz, Mistrz!", "Run, Forrest, run!", "Szybciej!", "Hop hop hop!", "Szybciej, szybciej!", "Wdech, wydech...", "Nie ma, że boli...", "Dasz radę!", "Wytrzymaj!", "Nie obijamy się!", "Ciśniesz!", "Przyspieszamy!", "Kto rządzi?"];
-let randomNumber = Math.floor(Math.random()*(speeches.length));
-console.log(randomNumber);
-console.log(speeches[randomNumber]); 
-speechText.textContent = speeches[randomNumber];
-speechBubble.classList.toggle("hidden--js");
-}
-
-runTimer = setInterval(increaseSeconds,10);
-runBubble = setInterval(turtleTalking,2000);
+    runTimer = setInterval(increaseSeconds, 10);
+    runBubble = setInterval(turtleTalking, 2000);
 }
 
 btnStart.addEventListener('click', startCounting);
@@ -79,12 +79,12 @@ btnPause.addEventListener('click', pauseCounting);
 
 const resetCounting = () => {
     pauseCounting();
-    milisecondsCounter=0;
-    miliseconds.textContent = "0"+milisecondsCounter;
-    secondsCounter=0;
-    seconds.textContent = "0"+secondsCounter;
+    milisecondsCounter = 0;
+    miliseconds.textContent = "0" + milisecondsCounter;
+    secondsCounter = 0;
+    seconds.textContent = "0" + secondsCounter;
     minutesCounter = 0;
-    minutes.textContent = "0"+minutesCounter;
+    minutes.textContent = "0" + minutesCounter;
 }
 
 btnReset.addEventListener('click', resetCounting);

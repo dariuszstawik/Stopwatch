@@ -1,7 +1,7 @@
 {
-  "name": "wtf-webpack-starterkit",
-  "version": "1.0.1",
-  "description": "WTF Webpack starterkit",
+  "name": "Turtle trainer",
+  "version": "1.0",
+  "description": "Simple stopwatch application with embeded turtle gif",
   "main": "index.js",
   "private": true,
   "scripts": {
@@ -14,7 +14,7 @@
     "Webpack",
     "boilerplate"
   ],
-  "author": "Maciek Korsan",
+  "author": "Dariusz Stawik",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.1",

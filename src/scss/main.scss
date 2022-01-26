@@ -5,36 +5,37 @@ $darkgreen: #737e3dff;
 $mobile: 768px;
 
 @mixin image-size {
-width: 400px;
-height: 200px; 
+  width: 400px;
+  height: 200px;
 }
 
 @mixin image-size-mobile {
-width: 300px;
-height: 150px;
+  width: 300px;
+  height: 150px;
 }
 
 @keyframes bubble {
   0% {
-    opacity:0;
+    opacity: 0;
   }
 
   20% {
-    opacity:1;
+    opacity: 1;
   }
 
   80% {
-    opacity:1;
+    opacity: 1;
   }
+
   100% {
-    opacity:0;
+    opacity: 0;
   }
 }
 
 body {
   width: 100%;
   height: 100vh;
-  margin:0px;
+  margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
@@ -58,49 +59,51 @@ div {
 }
 
 .header {
-  
+
   &__title {
-  font-size: 60px;
-  margin-bottom: 0px;
+    font-size: 60px;
+    margin-bottom: 0px;
 
     &--highlited {
-      color: $lightgreen;    
+      color: $lightgreen;
     }
-  
-  @media(max-width: $mobile) {
-    font-size: 35px;
-  }
-}
 
-&__subtitle {
-  margin-top: 0px;
-  text-align: right;
-  font-size: 24px;
-  @media(max-width: $mobile) {
-    font-size: 14px;
+    @media(max-width: $mobile) {
+      font-size: 35px;
+    }
   }
-}
+
+  &__subtitle {
+    margin-top: 0px;
+    text-align: right;
+    font-size: 24px;
+
+    @media(max-width: $mobile) {
+      font-size: 14px;
+    }
+  }
 }
 
 .image {
   @include image-size;
   margin-top: 30px;
-  position: relative;    
+  position: relative;
 
-&__static {
-  @include image-size;
-  background-color: white;
-  position: absolute;
-  top: 0;
-  left:0;
+  &__static {
+    @include image-size;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media(max-width: $mobile) {
+      @include image-size-mobile;
+    }
+  }
+
   @media(max-width: $mobile) {
     @include image-size-mobile;
   }
-}
-
-@media(max-width: $mobile) {
-  @include image-size-mobile;
-}
 }
 
 .image__static-img {
@@ -120,23 +123,23 @@ div {
   z-index: 1;
   animation: bubble 3s linear forwards;
 
-&__text {
-  position: absolute;
-  display: inline-block;
-  width: 100%;
-  top: 22%;
-  z-index: 1;
-  text-align: center;
+  &__text {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    top: 22%;
+    z-index: 1;
+    text-align: center;
+
+    @media(max-width: $mobile) {
+      font-size: 75%;
+      top: 15%;
+    }
+  }
 
   @media(max-width: $mobile) {
-  font-size: 75%;
-  top: 15%;
+    left: 150px;
   }
-}
-
-@media(max-width: $mobile) {
-  left: 150px;
-}
 }
 
 .hidden--js {
@@ -149,13 +152,13 @@ div {
   align-items: space-around;
   justify-content: space-around;
   font-size: 25px;
-   
+
   &__button {
     background-color: $lightgreen;
     padding: 10px 40px 10px 40px;
     border: 1px solid rgba(27, 31, 35, .15);
     border-radius: 6px;
-    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;    
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
   }
 
   @media(max-width: $mobile) {
@@ -166,7 +169,8 @@ div {
 
 .timer {
   font-size: 75px;
-@media(max-width: $mobile) {
-  font-size: 50px;
-}
+
+  @media(max-width: $mobile) {
+    font-size: 50px;
+  }
 }

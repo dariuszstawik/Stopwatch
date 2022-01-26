@@ -1,12 +1,12 @@
 {
-  "name": "WTF: PWA",
-  "short_name": "WTF: PWA",
-  "theme_color": "#2D2241",
-  "background_color": "#2D2241",
+  "name": "Turtle trainer - your peersonal stopwatch",
+  "short_name": "Turtle trainer",
+  "theme_color": "#737e3dff",
+  "background_color": "#737e3dff",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "/wtf-webpack-starter/",
-  "start_url": "/wtf-webpack-starter/",
+  "scope": "/Stopwatch/",
+  "start_url": "/Stopwatch/",
   "icons": [
     {
       "src": "pwa/manifest-icon-192.png",
